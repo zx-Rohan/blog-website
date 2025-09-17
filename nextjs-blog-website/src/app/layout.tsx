@@ -1,7 +1,7 @@
 // app/layout.tsx
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/app/components/layout/Navbar";
 import "./globals.css";
-import Footer from "@/components/Footer/Footer";
+import Footer from "@/app/components/layout/Footer";
 
 export const metadata = {
   title: "My Blog",
@@ -19,3 +19,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+
+
