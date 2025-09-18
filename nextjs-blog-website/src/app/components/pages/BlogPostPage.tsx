@@ -21,12 +21,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   
   if (!post) {
     return (
-      <main className="container mx-auto min-h-screen max-w-3xl p-8">
-        <Link href="/" className="hover:underline">
+      <main className="container mx-auto min-h-screen max-w-3xl p-8 bg-white dark:bg-gray-900">
+        <Link href="/" className="hover:underline text-blue-600 dark:text-blue-400">
           ← Back to posts
         </Link>
-        <h1 className="text-4xl font-bold mb-8">Post not found</h1>
-        <p>The post you're looking for doesn't exist.</p>
+        <h1 className="text-4xl font-bold mb-8 text-gray-900 dark:text-white">Post not found</h1>
+        <p className="text-gray-700 dark:text-gray-300">The post you're looking for doesn't exist.</p>
       </main>
     );
   }
@@ -35,12 +35,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const authorImageUrl = getImageUrl(post.author?.image, 100, 100);
 
   return (
-    <main className="container mx-auto min-h-screen max-w-4xl p-8">
-      <Link href="/" className="inline-flex items-center text-blue-600 hover:underline mb-8">
+    <main className="container mx-auto min-h-screen max-w-4xl p-8 bg-white dark:bg-gray-900">
+      <Link href="/" className="inline-flex items-center text-blue-600 dark:text-blue-400 hover:underline mb-8">
         ← Back to posts
       </Link>
       
-      <article className="bg-white rounded-lg shadow-md overflow-hidden">
+      <article className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
         {postImageUrl && (
           <div className="w-full h-64 md:h-96">
             <ImageWithFallback
@@ -62,8 +62,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           )}
           
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">{post.title}</h1>
-          
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900 dark:text-white">{post.title}</h1>          
           <AuthorInfo 
             author={post.author} 
             date={new Date(post.publishedAt).toLocaleDateString('en-US', { 
@@ -73,15 +72,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             })}
             authorImageUrl={authorImageUrl}
             showImage={true}
-          />
-          
+          />        
           {post.excerpt && (
-            <p className="text-xl italic text-gray-700 mb-8 border-l-4 border-blue-500 pl-4 py-2">
+            <p className="text-xl italic text-gray-700 dark:text-gray-300 mb-8 border-l-4 border-blue-500 pl-4 py-2">
               {post.excerpt}
             </p>
           )}
           
-          <div className="prose max-w-none">
+          <div className="prose dark:prose-invert max-w-none">
             {Array.isArray(post.body) && <PortableText value={post.body} />}
           </div>
         </div>

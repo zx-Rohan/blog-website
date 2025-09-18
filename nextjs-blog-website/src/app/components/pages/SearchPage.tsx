@@ -4,29 +4,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { client } from '@/client/sanity';
-import { getImageUrl } from '@/app/lib/image-url';
-import { ImageWithFallback } from '@/app/components/UI/ImageWithFallback';
+import { SEARCH_SUGGESTIONS_QUERY } from '@/app/lib/queries';
 import { PostCard } from '@/app/components/UI/PostCard';
-
-const SEARCH_QUERY = `*[_type == "post" && (title match $query || excerpt match $query)]{
-  _id, 
-  title, 
-  slug, 
-  publishedAt,
-  excerpt,
-  image,
-  author->{
-    _id,
-    name,
-    slug,
-    image
-  },
-  categories[]->{
-    _id,
-    title,
-    slug
-  }
-}`;
 
 interface SearchPageProps {
   searchParams: Promise<{ q?: string }>;
@@ -46,7 +25,7 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
       setLoading(true);
       
       try {
-        const data = await client.fetch(SEARCH_QUERY, { query: `*${q}*` });
+        const data = await client.fetch(SEARCH_SUGGESTIONS_QUERY, { query: `*${q}*` });
         setResults(data);
       } catch (error) {
         console.error('Error searching posts:', error);
@@ -59,13 +38,21 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
   }, [searchParams]);
 
   return (
-    <div className="container mx-auto min-h-screen max-w-4xl p-8">
-      <h1 className="text-3xl font-bold mb-8">
-        {query ? `Search results for "${query}"` : 'Search Posts'}
-      </h1>
+    <div className="container mx-auto min-h-screen max-w-4xl p-8 bg-white dark:bg-gray-900">
+      <div className="mb-8">
+        <Link 
+          href="/" 
+          className="text-blue-600 dark:text-blue-400 hover:underline"
+        >
+          ← Back to home
+        </Link>
+        <h1 className="text-3xl font-bold mt-4 text-gray-900 dark:text-white">
+          {query ? `Search results for "${query}"` : 'Search Posts'}
+        </h1>
+      </div>
       
       {loading ? (
-        <p>Searching...</p>
+        <p className="text-gray-700 dark:text-gray-300">Searching...</p>
       ) : results.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {results.map((post) => (
@@ -73,9 +60,9 @@ export default function SearchPage({ searchParams }: SearchPageProps) {
           ))}
         </div>
       ) : query ? (
-        <p>No posts found matching your search.</p>
+        <p className="text-gray-700 dark:text-gray-300">No posts found matching your search.</p>
       ) : (
-        <p>Enter a search term to find posts.</p>
+        <p className="text-gray-700 dark:text-gray-300">Enter a search term to find posts.</p>
       )}
     </div>
   );

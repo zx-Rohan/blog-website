@@ -5,10 +5,7 @@ import { client } from '@/client/sanity';
 const builder = imageUrlBuilder(client);
 
 export const getImageUrl = (source: any, width?: number, height?: number) => {
-  if (!source) {
-    console.log('No image source provided');
-    return null;
-  }
+  if (!source) return null;
   
   try {
     let image = builder.image(source);
@@ -21,9 +18,7 @@ export const getImageUrl = (source: any, width?: number, height?: number) => {
       image = image.height(height);
     }
     
-    const url = image.url();
-    console.log('Generated image URL:', url);
-    return url;
+    return image.url();
   } catch (error) {
     console.error('Error generating image URL:', error);
     return null;

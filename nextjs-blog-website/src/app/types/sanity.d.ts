@@ -22,16 +22,16 @@ export interface Author extends SanityDocument {
   };
   image?: any;
   bio?: string;
+  postCount?: number;
 }
 
-export interface Post extends SanityDocument {
+export interface Post {
+  _id: string;
   title: string;
-  slug: {
-    current: string;
-  };
+  slug: string; 
   publishedAt: string;
-  image?: any;
   excerpt?: string;
+  image?: any;
   body: any[];
   author: Author;
   categories: Category[];
@@ -53,4 +53,11 @@ export interface AuthorInfoProps {
 export interface CategoryBadgeProps {
   category: Category;
   className?: string;
+}
+
+export interface PostSuggestion {
+  _id: string;
+  title: string;
+  slug: string;
+  publishedAt: string;
 }
