@@ -37,8 +37,8 @@ export const Avatar: React.FC<AvatarProps> = ({
     .slice(0, 2);
 
   return (
-    <div className={`rounded-full bg-gray-300 flex items-center justify-center ${sizeClasses[size]} ${className}`}>
-      <span className="text-xs font-medium text-gray-700">{initials}</span>
+    <div className={`rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center ${sizeClasses[size]} ${className}`}>
+      <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{initials}</span>
     </div>
   );
 };
