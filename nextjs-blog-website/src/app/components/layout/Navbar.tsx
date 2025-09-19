@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import { Search, Sun, Moon, User, Menu, X } from 'lucide-react';
+import { Search, Sun, Moon, Menu, X } from 'lucide-react';
 import { useTheme } from '@/app/hooks/useTheme';
 import { client } from '@/client/sanity';
 import { SEARCH_SUGGESTIONS_QUERY } from '@/app/lib/queries';
