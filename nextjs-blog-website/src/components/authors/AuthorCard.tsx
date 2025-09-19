@@ -1,8 +1,8 @@
 // src/components/authors/AuthorCard.tsx
 import Link from 'next/link';
-import { Author } from '@/app/types/sanity';
-import { getImageUrl } from '@/app/lib/image-url';
-import { ImageWithFallback } from '@/app/components/UI/ImageWithFallback';
+import { Author } from '@/types/sanity';
+import { getImageUrl } from '@/lib/image-url';
+import { ImageWithFallback } from '@/components/UI/ImageWithFallback';
 
 interface AuthorCardProps {
   author: Author;

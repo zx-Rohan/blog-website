@@ -1,5 +1,5 @@
 // src/components/ui/CategoryBadge.tsx
-import { CategoryBadgeProps } from '@/app/types/sanity';
+import { CategoryBadgeProps } from '@/types/sanity';
 
 export const CategoryBadge: React.FC<CategoryBadgeProps> = ({ category }) => {
   return (

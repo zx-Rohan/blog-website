@@ -6,10 +6,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
 import { Search, Sun, Moon, Menu, X } from 'lucide-react';
-import { useTheme } from '@/app/hooks/useTheme';
+import { useTheme } from '@/hooks/useTheme';
 import { client } from '@/client/sanity';
-import { SEARCH_SUGGESTIONS_QUERY } from '@/app/lib/queries';
-import { SearchSuggestions } from '@/app/components/UI/SearchSuggestion';
+import { SEARCH_SUGGESTIONS_QUERY } from '@/lib/queries';
+import { SearchSuggestions } from '@/components/UI/SearchSuggestion';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

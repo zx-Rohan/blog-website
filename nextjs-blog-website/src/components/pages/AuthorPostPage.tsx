@@ -4,10 +4,10 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { client } from '@/client/sanity';
-import { AUTHOR_QUERY, AUTHOR_POSTS_QUERY } from '@/app/lib/queries';
-import { getImageUrl } from '@/app/lib/image-url';
-import { PostCard } from '@/app/components/UI/PostCard';
-import { ImageWithFallback } from '@/app/components/UI/ImageWithFallback';
+import { AUTHOR_QUERY, AUTHOR_POSTS_QUERY } from '@/lib/queries';
+import { getImageUrl } from '@/lib/image-url';
+import { PostCard } from '@/components/UI/PostCard';
+import { ImageWithFallback } from '@/components/UI/ImageWithFallback';
 
 interface AuthorPostsPageProps {
   params: Promise<{ slug: string }>;

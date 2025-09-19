@@ -2,11 +2,11 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { Post } from '@/app/types/sanity';
-import { getImageUrl } from '@/app/lib/image-url';
-import { ImageWithFallback } from '@/app/components/UI/ImageWithFallback';
-import { AuthorInfo } from '@/app/components/UI/AuthorInfo';
-import { CategoryBadge } from '@/app/components/UI/CategoryBadge';
+import { Post } from '@/types/sanity';
+import { getImageUrl } from '@/lib/image-url';
+import { ImageWithFallback } from '@/components/UI/ImageWithFallback';
+import { AuthorInfo } from '@/components/UI/AuthorInfo';
+import { CategoryBadge } from '@/components/UI/CategoryBadge';
 
 interface FeaturedPostProps {
   post: Post;

@@ -4,8 +4,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { client } from '@/client/sanity';
-import { SEARCH_SUGGESTIONS_QUERY } from '@/app/lib/queries';
-import { PostCard } from '@/app/components/UI/PostCard';
+import { SEARCH_SUGGESTIONS_QUERY } from '@/lib/queries';
+import { PostCard } from '@/components/UI/PostCard';
 
 interface SearchPageProps {
   searchParams: Promise<{ q?: string }>;

@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Post } from '@/app/types/sanity';
+import { Post } from '@/types/sanity';
 
 interface SearchSuggestionsProps {
   suggestions: Post[];

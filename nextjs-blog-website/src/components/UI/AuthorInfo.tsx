@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { AuthorInfoProps } from '@/app/types/sanity';
+import { AuthorInfoProps } from '@/types/sanity';
 import { Avatar } from './Avatar';
 
 export const AuthorInfo: React.FC<AuthorInfoProps> = ({ 

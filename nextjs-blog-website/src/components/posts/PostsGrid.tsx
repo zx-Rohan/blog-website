@@ -1,5 +1,5 @@
 // src/components/posts/PostsGrid.tsx
-import { Post } from '@/app/types/sanity';
+import { Post } from '@/types/sanity';
 import { PostCard } from '../UI/PostCard';
 
 interface PostsGridProps {

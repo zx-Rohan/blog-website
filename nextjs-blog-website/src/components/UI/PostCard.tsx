@@ -2,8 +2,8 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { PostCardProps } from '@/app/types/sanity';
-import { getImageUrl } from '@/app/lib/image-url';
+import { PostCardProps } from '@/types/sanity';
+import { getImageUrl } from '@/lib/image-url';
 import { ImageWithFallback } from './ImageWithFallback';
 import { AuthorInfo } from './AuthorInfo';
 import { CategoryBadge } from './CategoryBadge';

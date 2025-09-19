@@ -3,8 +3,8 @@
 
 import { useState, useEffect } from 'react';
 import { client } from '@/client/sanity';
-import { AUTHOR_QUERY } from '@/app/lib/queries';
-import AuthorCard from '@/app/components/authors/AuthorCard';
+import { AUTHOR_QUERY } from '@/lib/queries';
+import AuthorCard from '@/components/authors/AuthorCard';
 
 export default function AuthorsPage() {
   const [authors, setAuthors] = useState<any[]>([]);

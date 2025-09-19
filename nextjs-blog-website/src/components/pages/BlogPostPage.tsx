@@ -2,12 +2,12 @@
 import Link from 'next/link';
 import { PortableText } from 'next-sanity';
 import { client } from '@/client/sanity';
-import { POST_QUERY } from '@/app/lib/queries';
-import { REVALIDATE_TIME } from '@/app/lib/constants';
-import { getImageUrl } from '@/app/lib/image-url';
-import { ImageWithFallback } from '@/app/components/UI/ImageWithFallback';
-import { AuthorInfo } from '@/app/components/UI/AuthorInfo';
-import { CategoryBadge } from '@/app/components/UI/CategoryBadge';
+import { POST_QUERY } from '@/lib/queries';
+import { REVALIDATE_TIME } from '@/lib/constants';
+import { getImageUrl } from '@/lib/image-url';
+import { ImageWithFallback } from '@/components/UI/ImageWithFallback';
+import { AuthorInfo } from '@/components/UI/AuthorInfo';
+import { CategoryBadge } from '@/components/UI/CategoryBadge';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
